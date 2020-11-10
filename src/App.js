@@ -16,7 +16,7 @@ const App =() =>{
   };
  
   return (
-    <Fragment className="App">
+    <Fragment >
     {!isAuthenticated && <Login setLoginState={setLoginState} />}
     {isAuthenticated && (
       <div>
