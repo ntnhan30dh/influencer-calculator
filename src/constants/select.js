@@ -71,21 +71,19 @@ class Select {
   };
 
   contentValues = () => {
-    let names = [
-      "Low",
-      "Medium low",
-      "Medium high",
-      "High"
-      
-      
+    let list = [
+      {label:"Low",value:50},
+      {label:"Medium low",value:300},
+      {label:"Medium high",value:600},
+      {label:"High",value:1000},
     ];
 
     let res = [];
-    names.map((name) =>
+    list.map((item) =>
       res.push({
-        key: name,
-        value: name,
-        text: name,
+        key: item.label,
+        value: item.value,
+        text: item.label,
       })
     );
     return res;
