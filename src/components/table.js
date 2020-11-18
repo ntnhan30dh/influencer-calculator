@@ -36,6 +36,7 @@ const Table = (props) => {
                 >
                   Remove
                 </button>
+                <button onClick={()=>props.handleEdit(item.id)}> edit</button>
               </Cell>
             </Row>
           ))}
