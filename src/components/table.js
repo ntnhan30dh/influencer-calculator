@@ -2,7 +2,11 @@ import React from "react";
 import { StickyTable, Row, Cell } from "react-sticky-table";
 
 
-
+const formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "EUR",
+  minimumFractionDigits: 2,
+});
 
 const Table = (props) => {
   return (
@@ -26,7 +30,7 @@ const Table = (props) => {
               <Cell>{item.category}</Cell>
               <Cell>{item.platform}</Cell>
               <Cell>{item.prominence}</Cell>
-              <Cell>{item.price}</Cell>
+              <Cell>{formatter.format(item.price)}</Cell>
               {/* <Cell>{item.id}</Cell> */}
               <Cell>
                 {" "}
