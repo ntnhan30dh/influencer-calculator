@@ -78,7 +78,8 @@ const Calculator = () => {
     setOpen(false);
     // console.log("res", res);
   };
-  const handelAddInfluencer = () => {
+  const handelChangeInfluencer = (mode) => {
+    let callBack = mode==="add"?addInfluencer:updateInfluencer;
     setIsChecking(true);
     if (type === "existing") {
       brandFit &&
@@ -91,9 +92,9 @@ const Calculator = () => {
         followers &&
         type &&
         influencerValue &&
-        addInfluencer();
+        callBack();
     } else {
-      brandFit &&
+        brandFit &&
         targetGroup & audienceFit &&
         country &&
         link &&
@@ -104,7 +105,7 @@ const Calculator = () => {
         type &&
         eng &&
         imp &&
-        addInfluencer();
+        callBack();
     }
   };
   const handleRemove = (id) => {
@@ -156,7 +157,7 @@ const Calculator = () => {
     setInfluencerArr(newTodos);
     setUpdateMode(false);
     setOpen(false);
-    // console.log("price",price)
+   // console.log("followers",followers)
     // console.log("newTodos",newTodos)
   };
   const handleReset = () => {
@@ -220,7 +221,7 @@ const Calculator = () => {
             />
 
             <h3>Followers</h3>
-            <h4>{followers}</h4>
+            {/* <h4>{followers}</h4> */}
             <InputNumber value={followers} handleChange={setFollowers} />
             <Error
               value={followers}
@@ -425,9 +426,9 @@ const Calculator = () => {
 
           <div>
             {updateMode ? (
-              <button onClick={updateInfluencer}>Update </button>
+              <button onClick={()=>handelChangeInfluencer("update")}>Update </button>
             ) : (
-              <button onClick={handelAddInfluencer}>Add </button>
+              <button onClick={()=>handelChangeInfluencer("add")}>Add </button>
             )}
           </div>
         </div>
