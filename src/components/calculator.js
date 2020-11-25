@@ -183,17 +183,13 @@ const Calculator = () => {
     setIsChecking(false);
   };
   return (
-    <div className="wrapper">
-      <Table
-        influencerArr={influencerArr}
-        handleRemove={handleRemove}
-        handleEdit={handleEdit}
-      />
+    <div className="contentWrapper">
+      <div className="controlField">
       <Modal
         open={open}
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
-        trigger={<Button>Add influencer</Button>}
+        trigger={<Button className="addInfluencerBtn">Add influencer</Button>}
         fluid
         size="large"
       >
@@ -433,10 +429,19 @@ const Calculator = () => {
           </div>
         </div>
       </Modal>
+      <div className="bottom">
       <div className="resetButton">
-        <button onClick={handleReset}>Reset</button>
+        <Button onClick={handleReset}>Reset</Button>
       </div>
       <ExportExcel influencerArr={influencerArr} />
+      </div>
+        
+      </div>
+      <Table
+        influencerArr={influencerArr}
+        handleRemove={handleRemove}
+        handleEdit={handleEdit}
+      />
     </div>
   );
 };

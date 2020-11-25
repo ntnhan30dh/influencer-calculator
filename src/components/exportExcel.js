@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactExport from "react-export-excel";
+import {  Button } from "semantic-ui-react";
 
 
 const ExcelFile = ReactExport.ExcelFile;
@@ -9,7 +10,7 @@ const ExcelColumn = ReactExport.ExcelFile.ExcelColumn;
 const ExportExcel = (props) =>{
     return (
         <div>
-        <ExcelFile element={<button>Download Data</button>}>
+        <ExcelFile element={<Button>Download Data</Button>}>
         <ExcelSheet data={props.influencerArr} name="Employees">
           <ExcelColumn label="Name" value="name" />
           <ExcelColumn label="link" value="link" />
