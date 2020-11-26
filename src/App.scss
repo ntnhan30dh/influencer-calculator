@@ -60,9 +60,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    @media screen and (max-width: 600px) {
-      max-width: 100%;
-    }
 
     .leftWrapper {
       //@at-root border: 1px solid yellow;
@@ -162,8 +159,188 @@ body {
       }
     }
   }
+
+  .table {
+    margin-top: -72px;
+    //border: 1px solid blue;
+    width: 80%;
+    .sticky-table-table {
+      width: 100%;
+      .tableHeader {
+        text-transform: uppercase;
+        width: 100%;
+        height: 17px;
+        margin: 0 107px 1px 0;
+        font-family: "Corpid C1s";
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #ffffff;
+        border: 1px solid blue;
+
+        .name {
+          // min-width: 12.5%;
+          height: 42px;
+          margin: 0 843px 0 0;
+          //padding: 12px 84px 13px 20px;
+          background-color: $charcoal-grey;
+        }
+        .rest {
+          //  min-width: 12.5%;
+          height: 42px;
+          margin: 0 0 0 47px;
+          //  padding: 12px 98px 12px 123px;
+          background-color: $lipstick;
+        }
+      }
+      .tableContent {
+        .cell {
+          font-size: 14px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: $charcoal-grey;
+          font-family: "Corpid C1s";
+        }
+        .even_name {
+          background-color: #e3e3e3;
+        }
+        .odd_name {
+          background-color: #b3b3b3;
+        }
+
+        .even_rest {
+          background-color: #f1f1f1;
+        }
+        .odd_rest {
+          background-color: #e6e6e6;
+        }
+        button {
+          background-color: transparent;
+          border: none;
+          img {
+            width: 15px;
+            height: 18px;
+          }
+        }
+      }
+    }
+  }
 }
 .modalWrapper {
   display: flex;
   padding: 5%;
+  flex-direction: column;
+  .top {
+    display: flex;
+    width: 100%;
+    > * {
+      width: 25%;
+      margin: 0 15px;
+      h3 {
+        font-family: "Corpid C1s";
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $charcoal-grey;
+      }
+    }
+
+    .radios {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    label {
+      width: 101px;
+      padding: 0.67857143em 0;
+      border-radius: 8px;
+      border: solid 1px #222d33;
+      background-color: transparent;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: $charcoal-grey;
+      text-transform: uppercase;
+    }
+    label::before {
+      display: none;
+    }
+
+    label::after {
+      display: none;
+    }
+    .active {
+      label {
+        background-color: #29e6ff;
+        color: #343b46;
+        border: none;
+      }
+    }
+  }
+  .bottom {
+    display: flex;
+    padding-top: 5%;
+    > * {
+      width: 33.3%;
+      margin: 0 15px;
+    }
+
+    .links {
+      a {
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #f7b500;
+        text-decoration: underline;
+      }
+    }
+    .buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      button {
+        width: 92px;
+        height: 30px;
+        border-radius: 8px;
+        background-color: #ffd700;
+        border: none;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.ui.radio.checkbox .box,
+.ui.radio.checkbox label {
+  padding-left: 0;
+}
+
+.ui.fluid.dropdown {
+  border-radius: 8px;
+  // height: 30px;
+  border: solid 1px #d8d8d8;
+}
+
+.ui.fluid.input {
+  input {
+    border-radius: 8px;
+    // height: 30px;
+    border: solid 1px #d8d8d8;
+  }
 }

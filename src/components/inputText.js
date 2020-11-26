@@ -8,6 +8,7 @@ const InputText = (props) => {
     <Input
       value={props.value}
       onChange={(e, { value }) => props.handleChange(value)}
+      fluid
     />
     </div>
   );

@@ -6,6 +6,8 @@ import Auth from "./constants/auth";
 
 import logo from "./images/logo.png";
 
+
+
 import "semantic-ui-css/semantic.min.css";
 import "./App.scss";
 

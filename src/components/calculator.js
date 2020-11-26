@@ -7,6 +7,7 @@ import ExportExcel from "./exportExcel";
 import InputText from "./inputText";
 import InputNumber from "./inputNumber";
 import Error from "./error";
+import info from "../images/info.png"
 
 const Calculator = () => {
   const select = new Select();
@@ -27,8 +28,8 @@ const Calculator = () => {
   let [influencerValue, setInfluencerValue] = useState(undefined);
   let [country, setCountry] = useState(undefined);
   let [influencerArr, setInfluencerArr] = useState([]);
-  let [open, setOpen] = React.useState(false);
-  let [isChecking, setIsChecking] = useState(undefined);
+  let [open, setOpen] = React.useState(false); // should be false
+  let [isChecking, setIsChecking] = useState(false);
   let [chosenID, setChosenID] = useState(undefined);
   let [updateMode, setUpdateMode] = useState(false);
   let prominence =
@@ -167,7 +168,6 @@ const Calculator = () => {
   const reset = () => {
     setCategory("");
     setPlatform("");
-    // setProminence("");
     setInfluencerName("");
     setLink("");
     setFollowers("");
@@ -187,16 +187,17 @@ const Calculator = () => {
       <div className="controlField">
       <Modal
         open={open}
-        onClose={() => setOpen(false)}
+        onClose={() => setOpen(false)}//should be false
         onOpen={() => setOpen(true)}
         trigger={<Button className="addInfluencerBtn">Add influencer</Button>}
         fluid
         size="large"
       >
         <div className="modalWrapper">
+          <div className="top">
           <div>
             <h3>Influencer name</h3>
-            <h4>{influencerName}</h4>
+            {/* <h4>{influencerName}</h4> */}
             <InputText
               value={influencerName}
               handleChange={setInfluencerName}
@@ -208,7 +209,7 @@ const Calculator = () => {
             />
 
             <h3> Social Media Link</h3>
-            <h4>{link}</h4>
+            {/* <h4 >{link}</h4> */}
             <InputText value={link} handleChange={setLink} />
             <Error
               value={link}
@@ -227,10 +228,10 @@ const Calculator = () => {
           </div>
           <div>
             <h3> Category</h3>
-            <h4>{category}</h4>
+            {/* <h4>{category}</h4> */}
             <Dropdown
               placeholder="Select Category"
-              // fluid
+               fluid
               search
               selection
               options={select.categories()}
@@ -244,10 +245,10 @@ const Calculator = () => {
             />
 
             <h3>Platform</h3>
-            <h4>{platform}</h4>
+            {/* <h4>{platform}</h4> */}
             <Dropdown
               placeholder="Select platform"
-              // fluid
+               fluid
               search
               selection
               options={select.platforms()}
@@ -264,7 +265,7 @@ const Calculator = () => {
             {/* <h4>{country}</h4> */}
             <Dropdown
               placeholder="Select Country"
-              //fluid
+              fluid
               search
               selection
               options={countryList.countries()}
@@ -299,13 +300,13 @@ const Calculator = () => {
             />
 
             <h3>Brand fit </h3>
-            <p>on a scale of 0.5 to 1.5</p>
             {/* <h4>{brandFit}</h4> */}
-            <InputNumber value={brandFit} handleChange={setBrandFit} />
+            <InputNumber value={brandFit} handleChange={setBrandFit} placeholder="On a scale from 0.5 to 1.5" />
             <Error
               value={brandFit}
               isChecking={isChecking}
-              label={" Brand fit"}
+              label=" Brand fit"
+              
             />
 
             {/^[0-9.]*$/.test(brandFit) &&
@@ -319,8 +320,8 @@ const Calculator = () => {
             <h3>Content value </h3>
             {/* <h4>{contentValue}</h4> */}
             <Dropdown
-              placeholder="Influencer prominence"
-              // fluid
+    
+              fluid
               value={contentValue}
               selection
               options={select.contentValues()}
@@ -335,9 +336,10 @@ const Calculator = () => {
           <div>
             <h3>Influencer type</h3>
             {/* <h4>{influencerValueRes}</h4> */}
+            <div className="radios">
             <Form.Field>
               <Radio
-                // className={adFormat === 1 ? "active" : ""}
+                className={type === "new" ? "active" : ""}
                 label="New"
                 name="radioGroup1"
                 value="new"
@@ -347,7 +349,7 @@ const Calculator = () => {
             </Form.Field>
             <Form.Field>
               <Radio
-                //className={adFormat === 0.8 ? "active" : ""}
+                className={type === "existing" ? "active" : ""}
                 label="Existing"
                 name="radioGroup1"
                 value="existing"
@@ -355,6 +357,7 @@ const Calculator = () => {
                 onChange={(e, { value }) => setType(value)}
               />
             </Form.Field>
+            </div>
             <Error
               value={type}
               isChecking={isChecking}
@@ -362,23 +365,23 @@ const Calculator = () => {
             />
 
             {type === "new" && (
-              <div>
+              <h3>
                 <h3>AVG ENG</h3>
-                <h4>{eng}</h4>
+                {/* <h4>{eng}</h4> */}
                 <InputNumber value={eng} handleChange={setEng} />
                 <Error value={eng} isChecking={isChecking} label={" AVG ENG"} />
 
                 <h3>AVG IMP</h3>
-                <h4>{imp}</h4>
+                {/* <h4>{imp}</h4> */}
                 <InputNumber value={imp} handleChange={setImp} />
                 <Error value={imp} isChecking={isChecking} label={" AVG IMP"} />
-              </div>
+              </h3>
             )}
-            {type === "existing" && (
-              <div>
-                {" "}
+            {type === "existing" && 
+            (
+              <h3>
                 <h3>Influencer Value</h3>
-                <h4>{influencerValue}</h4>
+                {/* <h4>{influencerValue}</h4> */}
                 <InputNumber
                   value={influencerValue}
                   handleChange={setInfluencerValue}
@@ -388,13 +391,17 @@ const Calculator = () => {
                   isChecking={isChecking}
                   label={" Influencer Value"}
                 />
-              </div>
-            )}
+              </h3>
+            )
+            }
           </div>
-          <div>
+          </div>
+          <div className="bottom">
+          <div className="links">
             {/* <h3>influencerValueRes: {influencerValueRes}</h3> */}
             {/* <h3>price:{price}</h3> */}
-
+            <img src={info} alt="info" />
+            <br/>
             <a
               href="https://app.neoreach.com/login#/influencers"
               rel="noopener noreferrer"
@@ -420,13 +427,19 @@ const Calculator = () => {
             </a>
           </div>
 
-          <div>
+          <div className="buttons">
             {updateMode ? (
               <button onClick={()=>handelChangeInfluencer("update")}>Update </button>
             ) : (
               <button onClick={()=>handelChangeInfluencer("add")}>Add </button>
             )}
           </div>
+          <div>
+
+          </div>
+
+          </div>
+         
         </div>
       </Modal>
       <div className="bottom">

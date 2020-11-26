@@ -12,10 +12,12 @@ const InputNumber = (props) => {
   return (
   <div>
     <Input
+      fluid
       value={props.value}
       onChange={(e, { value }) => value >= 0 ? props.handleChange(value) : props.handleChange("")}
       type="number"
       onKeyDown={ (evt) => handleSpotKeyDown(evt)  }
+      placeholder={props.placeholder}
     />
     {!/^\d+$/.test(props.value)&&!/^\d+$/.test(keyDown) && keyDown &&(keyDown!=='Backspace')&& (
       <Label basic color="red" pointing="left">
