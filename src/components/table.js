@@ -67,6 +67,82 @@ const formatter = new Intl.NumberFormat("en-US", {
 //     "type": "new",
 //     "influencerValue": "451",
 //     "country": "Peru"
+//   },
+//   {
+//     "id": "Ngua deo1606387987796",
+//     "name": "Ngua deo",
+//     "link": "www.dingua.com",
+//     "followers": "123562",
+//     "category": "Young Families",
+//     "platform": "TikTok",
+//     "prominence": "A",
+//     "price": 1152.76053088,
+//     "eng": "6328",
+//     "imp": "6328",
+//     "audienceFit": "45",
+//     "targetGroup": "54",
+//     "brandFit": "0.5",
+//     "contentValue": 1000,
+//     "type": "new",
+//     "influencerValue": "451",
+//     "country": "Peru"
+//   },
+//   {
+//     "id": "Ngua deo1606387987796",
+//     "name": "Ngua deo",
+//     "link": "www.dingua.com",
+//     "followers": "123562",
+//     "category": "Young Families",
+//     "platform": "TikTok",
+//     "prominence": "A",
+//     "price": 1152.76053088,
+//     "eng": "6328",
+//     "imp": "6328",
+//     "audienceFit": "45",
+//     "targetGroup": "54",
+//     "brandFit": "0.5",
+//     "contentValue": 1000,
+//     "type": "new",
+//     "influencerValue": "451",
+//     "country": "Peru"
+//   },
+//   {
+//     "id": "Ngua deo1606387987796",
+//     "name": "Ngua deo",
+//     "link": "www.dingua.com",
+//     "followers": "123562",
+//     "category": "Young Families",
+//     "platform": "TikTok",
+//     "prominence": "A",
+//     "price": 1152.76053088,
+//     "eng": "6328",
+//     "imp": "6328",
+//     "audienceFit": "45",
+//     "targetGroup": "54",
+//     "brandFit": "0.5",
+//     "contentValue": 1000,
+//     "type": "new",
+//     "influencerValue": "451",
+//     "country": "Peru"
+//   },
+//   {
+//     "id": "Ngua deo1606387987796",
+//     "name": "Ngua deo",
+//     "link": "www.dingua.com",
+//     "followers": "123562",
+//     "category": "Young Families",
+//     "platform": "TikTok",
+//     "prominence": "A",
+//     "price": 1152.76053088,
+//     "eng": "6328",
+//     "imp": "6328",
+//     "audienceFit": "45",
+//     "targetGroup": "54",
+//     "brandFit": "0.5",
+//     "contentValue": 1000,
+//     "type": "new",
+//     "influencerValue": "451",
+//     "country": "Peru"
 //   }
 // ]
 const Table = (props) => {
@@ -92,7 +168,7 @@ const Table = (props) => {
             let restBg = influencerArr.indexOf(item)% 2===0?"cell even_rest":"cell odd_rest"
             return (
             <Row className="tableContent">
-              <Cell className={nameBg}>{item.name} {influencerArr.indexOf(item)}</Cell>
+              <Cell className={nameBg}>{item.name}</Cell>
               <Cell className={restBg}>{item.link}</Cell>
               <Cell className={restBg}>{new Intl.NumberFormat().format(item.followers)}</Cell>
               <Cell className={restBg}>{item.category}</Cell>
