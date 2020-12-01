@@ -339,6 +339,7 @@ const Calculator = () => {
                   placeholder="On a scale from 0.5 to 1.5"
                   label="Brand fit"
                   isChecking={isChecking}
+                  step={0.1}
                 />
 
                 {/^[0-9.]*$/.test(brandFit) &&

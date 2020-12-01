@@ -14,13 +14,17 @@ const InputNumber = (props) => {
     <div>
       <Input
         fluid
-       value={props.value}
-        onChange={(e, { value }) => value >= 0 ? props.handleChange(value) : props.handleChange("")}
+        value={props.value}
+        onChange={(e, { value }) =>
+          value >= 0 ? props.handleChange(value) : props.handleChange("")
+        }
         type="number"
         onKeyDown={(evt) => handleSpotKeyDown(evt)}
         placeholder={props.placeholder}
+        step={props.step}
+       // max="100"
       />
-      {!/^\d+$/.test(props.value) &&
+      {(props.label!=="Brand fit")&&!/^\d+$/.test(props.value) &&
         !/^\d+$/.test(keyDown) &&
         keyDown &&
         keyDown !== "Backspace" && (
@@ -29,12 +33,11 @@ const InputNumber = (props) => {
           </Label>
         )}
 
-   { props.isChecking &&
-    !props.value && (
-      <Label basic color="red" pointing="above">
-        Please enter {props.label}
-      </Label>)}
-
+      {props.isChecking && !props.value && (
+        <Label basic color="red" pointing="above">
+          Please enter {props.label}
+        </Label>
+      )}
     </div>
   );
 };
