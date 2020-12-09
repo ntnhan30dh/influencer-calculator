@@ -16,6 +16,7 @@ class Select {
       "Campus",
       "Technology",
       "Eco Warriors",
+      "Other"
     ];
 
     let res = [];

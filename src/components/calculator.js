@@ -49,7 +49,7 @@ const Calculator = () => {
 
   let errorFree =
     brandFit <= 1.5 &&
-    brandFit >= 0.5 &&
+    brandFit >= 0.1 &&
     audienceFit <= 100 &&
     targetGroup <= 100
       ? true
@@ -336,17 +336,17 @@ const Calculator = () => {
                 <InputNumber
                   value={brandFit}
                   handleChange={setBrandFit}
-                  placeholder="On a scale from 0.5 to 1.5"
+                  placeholder="On a scale from 0.1 to 1.5"
                   label="Brand fit"
                   isChecking={isChecking}
                   step={0.1}
                 />
 
                 {/^[0-9.]*$/.test(brandFit) &&
-                  (parseFloat(brandFit) > 1.5 || parseFloat(brandFit) < 0.5) &&
+                  (parseFloat(brandFit) > 1.5 || parseFloat(brandFit) < 0.1) &&
                   brandFit && (
                     <Label basic color="red" pointing="above">
-                      0.5 to 1.5
+                      0.1 to 1.5
                     </Label>
                   )}
 
