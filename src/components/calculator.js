@@ -103,6 +103,7 @@ const Calculator = () => {
         followers &&
         type &&
         influencerValue &&
+        contentValue&&
         callBack();
     } else {
       errorFree &&
@@ -116,6 +117,7 @@ const Calculator = () => {
         platform &&
         followers &&
         type &&
+        contentValue&&
         eng &&
         imp &&
         callBack();
@@ -454,11 +456,11 @@ const Calculator = () => {
                 </a>
                 <br />
                 <a
-                  href="https://docs.google.com/document/d/1xq-P39hrYsWgmfZr6Nmrs58HAD7y6H_qxeULwRgrjMs"
+                  href="https://docs.google.com/presentation/d/1pljqOE0J3LThplK_aFxdRSCepAc32AEIfhS_00kOVoo/edit#slide=id.gb08483d34e_0_566,"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  Where to find information
+                  User guide
                 </a>
               </div>
 
